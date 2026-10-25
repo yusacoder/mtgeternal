@@ -64,6 +64,28 @@ function renderPage(data) {
     if (profileTitle) profileTitle.textContent = data.profile.title || '';
     if (profileBio) profileBio.textContent = data.profile.bio || '';
 
+    // Verified badge
+    const badgeContainer = document.getElementById('verified-badge-container');
+    if (badgeContainer) {
+      badgeContainer.innerHTML = '';
+      if (data.profile.verified) {
+        const badgeLink = document.createElement('a');
+        badgeLink.href = data.profile.verificationUrl || 'https://eternalproduction.net';
+        badgeLink.target = '_blank';
+        badgeLink.rel = 'noopener noreferrer';
+        badgeLink.className = 'verified-badge';
+        const tooltipText = data.profile.verificationText || 'bu profil eternalproduction.net tarafından onaylanmıştır';
+        badgeLink.setAttribute('data-tooltip', tooltipText);
+        badgeLink.setAttribute('aria-label', tooltipText);
+
+        const badgeIcon = document.createElement('i');
+        badgeIcon.className = 'fa-solid fa-circle-check verified-icon';
+
+        badgeLink.appendChild(badgeIcon);
+        badgeContainer.appendChild(badgeLink);
+      }
+    }
+
     if (data.profile.flag) {
       if (flagImg) {
         flagImg.src = data.profile.flag;

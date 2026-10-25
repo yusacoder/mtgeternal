@@ -5,7 +5,10 @@
     "bio": "Merhabalar ben mtg Alisa Mikhailovna Kujou (Alya) üzerine içerikler üretiyorum. Amacım, Alya’yı daha fazla kişiye sevdirmek ve Alya hayranları için hem güzel hem de eğlenceli içerikler sunmak.",
     "avatarUrl": "mtgpp.jpg",
     "flag": "assets/flags/tr.svg",
-    "flagAlt": "Türkiye Bayrağı"
+    "flagAlt": "Türkiye Bayrağı",
+    "verified": true,
+    "verificationText": "bu profil eternalproduction.net tarafından onaylanmıştır",
+    "verificationUrl": "https://eternalproduction.net"
   },
   "theme": {
     "backgroundImageUrl": "https://wallpapercave.com/wp/wp14269355.jpg",
