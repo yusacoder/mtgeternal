@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MTG - Profile & Links</title>
+  <meta name="description" content="MTG personal profile and social media links page">
+  <link rel="alternate" hreflang="tr" href="/" />
+  <link rel="alternate" hreflang="en" href="/en" />
+  <link rel="alternate" hreflang="tr" href="/sikayet" />
+  <link rel="alternate" hreflang="en" href="/en/report" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- FontAwesome CDN for modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body data-lang="en" data-page="home">
+  <!-- Blurred Background Layer -->
+  <div id="bg-blur" class="bg-blur-layer"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Main Container -->
+  <main class="container">
+    <div class="glass-card">
+
+      <!-- Language Selector -->
+      <div class="lang-switcher">
+        <a href="/" class="lang-btn" data-lang-target="tr">TR</a>
+        <span class="lang-divider">|</span>
+        <a href="/en" class="lang-btn active" data-lang-target="en">EN</a>
+      </div>
+
+      <!-- Profile Header -->
+      <header class="profile-header">
+        <div class="avatar-wrapper">
+          <img id="avatar-img" src="" alt="MTG Profile Photo" class="avatar-img" />
+          <div class="flag-badge" id="flag-badge-container">
+            <img id="flag-img" src="" alt="Flag" class="flag-img" />
+          </div>
+        </div>
+
+        <div class="name-wrapper">
+          <h1 id="profile-name" class="profile-name">MTG</h1>
+          <span id="verified-badge-container"></span>
+        </div>
+        <p id="profile-title" class="profile-title">@mtgofficial</p>
+        <p id="profile-bio" class="profile-bio">Loading...</p>
+      </header>
+
+      <!-- Links Container -->
+      <section class="links-section">
+        <div id="links-container" class="links-container">
+          <!-- Dynamic links injected via JS -->
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="profile-footer">
+        <p id="footer-text">© 2026 MTG</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- iOS Style Floating Glass Bottom Navigation Bar -->
+  <nav class="ios-navbar" aria-label="Bottom Navigation">
+    <div class="ios-navbar-content">
+      <a href="/en" class="nav-item active" id="nav-home">
+        <i class="fa-solid fa-house nav-icon"></i>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="/en/report" class="nav-item" id="nav-report">
+        <i class="fa-solid fa-flag nav-icon"></i>
+        <span class="nav-label">Report</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>

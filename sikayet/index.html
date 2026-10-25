@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Eternal Production - Kullanıcı Şikâyeti</title>
+  <meta name="description" content="Eternal Production kullanıcı şikâyet ve bildirim formu">
+  <link rel="alternate" hreflang="tr" href="/sikayet" />
+  <link rel="alternate" hreflang="en" href="/en/report" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body data-lang="tr" data-page="report">
+  <!-- Blurred Background Layer -->
+  <div id="bg-blur" class="bg-blur-layer"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Main Container -->
+  <main class="container">
+    <div class="glass-card">
+
+      <!-- Language Selector -->
+      <div class="lang-switcher">
+        <a href="/sikayet" class="lang-btn active" id="lang-switch-tr" data-lang-target="tr">TR</a>
+        <span class="lang-divider">|</span>
+        <a href="/en/report" class="lang-btn" id="lang-switch-en" data-lang-target="en">EN</a>
+      </div>
+
+      <!-- Form Header -->
+      <header class="page-header">
+        <div class="header-icon-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h1 class="page-title">Kullanıcı Şikâyeti</h1>
+        <p class="page-subtitle">Eternal Production topluluk güvenliği için şikâyetinizi bize iletin.</p>
+      </header>
+
+      <!-- Alert / Notification Message Box -->
+      <div id="form-alert" class="form-alert hidden" role="alert"></div>
+
+      <!-- Complaint Form -->
+      <form id="complaint-form" class="complaint-form" novalidate>
+        <!-- Honeypot for spam protection -->
+        <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off" />
+
+        <!-- Form Fields -->
+        <div class="form-group">
+          <label for="fullName" class="form-label">Ad Soyad <span class="required">*</span></label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Adınız ve Soyadınız" required minlength="2" />
+          </div>
+          <span class="error-msg" id="err-fullName"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Telefon Numarası <span class="required">*</span></label>
+          <div class="phone-input-group">
+            <div class="select-wrapper country-code-wrapper">
+              <select id="countryCode" name="countryCode" class="form-select country-select" required>
+                <option value="+90" data-code="TR" selected>🇹🇷 Türkiye (+90)</option>
+                <option value="+1" data-code="US">🇺🇸 ABD / Kanada (+1)</option>
+                <option value="+44" data-code="GB">🇬🇧 Birleşik Krallık (+44)</option>
+                <option value="+49" data-code="DE">🇩🇪 Almanya (+49)</option>
+                <option value="+33" data-code="FR">🇫🇷 Fransa (+33)</option>
+                <option value="+31" data-code="NL">🇳🇱 Hollanda (+31)</option>
+                <option value="+39" data-code="IT">🇮🇹 İtalya (+39)</option>
+                <option value="+34" data-code="ES">🇪🇸 İspanya (+34)</option>
+                <option value="+7" data-code="RU">🇷🇺 Rusya (+7)</option>
+                <option value="+971" data-code="AE">🇦🇪 Birleşik Arap Emirlikleri (+971)</option>
+                <option value="+994" data-code="AZ">🇦🇿 Azerbaycan (+994)</option>
+                <option value="+380" data-code="UA">🇺🇦 Ukrayna (+380)</option>
+                <option value="+966" data-code="SA">🇸🇦 Suudi Arabistan (+966)</option>
+                <option value="+81" data-code="JP">🇯🇵 Japonya (+81)</option>
+                <option value="+86" data-code="CN">🇨🇳 Çin (+86)</option>
+              </select>
+            </div>
+            <div class="input-wrapper phone-number-wrapper">
+              <i class="fa-solid fa-phone input-icon"></i>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="5xx xxx xx xx" required />
+            </div>
+          </div>
+          <span class="error-msg" id="err-phone"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reportedUser" class="form-label">Şikâyet Edilen Kullanıcı <span class="required">*</span></label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-at input-icon"></i>
+            <input type="text" id="reportedUser" name="reportedUser" class="form-input" placeholder="Kullanıcı adı veya profil bağlantısı" required />
+          </div>
+          <span class="error-msg" id="err-reportedUser"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="category" class="form-label">Şikâyet Nedeni <span class="required">*</span></label>
+          <div class="select-wrapper">
+            <select id="category" name="category" class="form-select" required>
+              <option value="" disabled selected>Lütfen şikâyet nedenini seçin</option>
+              <option value="Dolandırıcılık şüphesi">Dolandırıcılık şüphesi</option>
+              <option value="Taciz / Rahatsız edici davranış">Taciz / Rahatsız edici davranış</option>
+              <option value="Sahte hesap">Sahte hesap</option>
+              <option value="Kimliğe bürünme">Kimliğe bürünme</option>
+              <option value="Eternal Production kurallarını ihlal">Eternal Production kurallarını ihlal</option>
+              <option value="Yanıltıcı bilgi paylaşımı">Yanıltıcı bilgi paylaşımı</option>
+              <option value="Diğer">Diğer</option>
+            </select>
+          </div>
+          <span class="error-msg" id="err-category"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="description" class="form-label">Şikâyet Açıklaması <span class="required">*</span></label>
+          <div class="input-wrapper textarea-wrapper">
+            <textarea id="description" name="description" class="form-textarea" rows="4" placeholder="Olayı detaylı bir şekilde açıklayınız (en az 30 karakter)..." required minlength="30"></textarea>
+          </div>
+          <div class="char-count"><span id="desc-char-count">0</span> / 30 karakter min</div>
+          <span class="error-msg" id="err-description"></span>
+        </div>
+
+        <!-- Warning Callout Box -->
+        <div class="notice-box">
+          <div class="notice-title">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Önemli Bilgilendirme</span>
+          </div>
+          <p class="notice-text">
+            Asılsız, kasıtlı olarak yanıltıcı veya kötü niyetli şikâyetler kabul edilmez. Tüm başvurular Eternal Production yönetimi tarafından incelenir. Şikâyet oluşturulması, ilgili kullanıcı hakkında doğrudan işlem uygulanacağı anlamına gelmez.
+          </p>
+        </div>
+
+        <!-- Agreement Checkbox & Privacy Statement -->
+        <div class="form-group checkbox-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="termsAgreement" name="termsAgreement" required />
+            <span class="checkmark"></span>
+            <span class="checkbox-label">
+              Paylaştığım bilgilerin doğru olduğunu ve şikâyelimin incelenmesi amacıyla kullanılacağını kabul ediyorum.
+            </span>
+          </label>
+          <span class="error-msg" id="err-termsAgreement"></span>
+        </div>
+
+        <p class="privacy-notice">
+          <i class="fa-solid fa-shield-halved"></i>
+          Telefon numaranız, gerektiğinde başvurunuzla ilgili sizinle iletişim kurmak ve doğrulamak amacıyla işlenmektedir.
+        </p>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submit-btn" class="submit-btn">
+          <span class="btn-text">Şikâyeti Gönder</span>
+          <span class="btn-spinner hidden"><i class="fa-solid fa-spinner fa-spin"></i></span>
+        </button>
+      </form>
+
+      <!-- Footer -->
+      <footer class="profile-footer">
+        <p id="footer-text">© 2026 Eternal Production. Tüm hakları saklıdır.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- iOS Style Floating Glass Bottom Navigation Bar -->
+  <nav class="ios-navbar" aria-label="Alt Navigasyon">
+    <div class="ios-navbar-content">
+      <a href="/" class="nav-item" id="nav-home">
+        <i class="fa-solid fa-house nav-icon"></i>
+        <span class="nav-label">Ana Menü</span>
+      </a>
+      <a href="/sikayet" class="nav-item active" id="nav-report">
+        <i class="fa-solid fa-flag nav-icon"></i>
+        <span class="nav-label">Şikâyet</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>
