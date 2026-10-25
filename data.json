@@ -1,0 +1,69 @@
+{
+  "profile": {
+    "name": "MTG",
+    "title": "@mtgofficial",
+    "bio": "İçerik Üreticisi & Dijital Medya Tasarımcısı ✨ | Gaming, Tech & Lifestyle",
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80",
+    "flag": "assets/flags/tr.svg",
+    "flagAlt": "Türkiye Bayrağı"
+  },
+  "theme": {
+    "backgroundImageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80",
+    "blurAmount": "18px",
+    "brightness": "75%"
+  },
+  "links": [
+    {
+      "title": "Instagram",
+      "subtitle": "Günlük gönderiler ve hikayeler",
+      "url": "https://instagram.com",
+      "icon": "instagram",
+      "highlight": true
+    },
+    {
+      "title": "TikTok",
+      "subtitle": "Kısa videolar ve trend içerikler",
+      "url": "https://tiktok.com",
+      "icon": "tiktok",
+      "highlight": false
+    },
+    {
+      "title": "YouTube",
+      "subtitle": "Uzun soluklu videolar ve vloglar",
+      "url": "https://youtube.com",
+      "icon": "youtube",
+      "highlight": false
+    },
+    {
+      "title": "Discord Sunucusu",
+      "subtitle": "Topluluğumuza katılın ve sohbet edin",
+      "url": "https://discord.gg",
+      "icon": "discord",
+      "highlight": false
+    },
+    {
+      "title": "Twitch Yayınları",
+      "subtitle": "Haftalık canlı yayınlar",
+      "url": "https://twitch.tv",
+      "icon": "twitch",
+      "highlight": false
+    },
+    {
+      "title": "X (Twitter)",
+      "subtitle": "Duyurular ve anlık düşünceler",
+      "url": "https://x.com",
+      "icon": "twitter",
+      "highlight": false
+    },
+    {
+      "title": "Spotify Çalma Listesi",
+      "subtitle": "Yayınlarda çaldığımız favori müzikler",
+      "url": "https://spotify.com",
+      "icon": "spotify",
+      "highlight": false
+    }
+  ],
+  "footer": {
+    "text": "© 2025 MTG. Tüm hakları saklıdır."
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTG - Profil ve Bağlantılar</title>
+  <meta name="description" content="MTG kişisel tanıtım ve sosyal medya bağlantı sayfası">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome CDN for modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Blurred Background Layer -->
+  <div id="bg-blur" class="bg-blur-layer"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Main Container -->
+  <main class="container">
+    <div class="glass-card">
+
+      <!-- Profile Header -->
+      <header class="profile-header">
+        <div class="avatar-wrapper">
+          <img id="avatar-img" src="" alt="MTG Profil Fotoğrafı" class="avatar-img" />
+          <div class="flag-badge" id="flag-badge-container">
+            <img id="flag-img" src="" alt="Bayrak" class="flag-img" />
+          </div>
+        </div>
+
+        <h1 id="profile-name" class="profile-name">MTG</h1>
+        <p id="profile-title" class="profile-title">@mtgofficial</p>
+        <p id="profile-bio" class="profile-bio">Yükleniyor...</p>
+      </header>
+
+      <!-- Links Container -->
+      <section class="links-section">
+        <div id="links-container" class="links-container">
+          <!-- Dynamic links injected via JS -->
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="profile-footer">
+        <p id="footer-text">© 2025 MTG</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
