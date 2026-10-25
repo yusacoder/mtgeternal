@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/en", "destination": "/en/index.html" },
+    { "source": "/sikayet", "destination": "/sikayet/index.html" },
+    { "source": "/en/report", "destination": "/en/report/index.html" }
+  ]
+}
